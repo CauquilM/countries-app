@@ -1,0 +1,59 @@
+[
+  {
+    "id": 1,
+    "name": "France",
+    "population": 10,
+    "region": "Europe",
+    "capital": "Paris",
+    "svg": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg",
+    "flags": {
+      "svg": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg",
+      "png": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_the_Taliban.svg/320px-Flag_of_the_Taliban.svg.png"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Allemagne",
+    "population": 10,
+    "region": "Europe",
+    "capital": "Paris",
+    "flags": {
+      "svg": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg",
+      "png": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_the_Taliban.svg/320px-Flag_of_the_Taliban.svg.png"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Italie",
+    "population": 10,
+    "region": "Europe",
+    "capital": "Paris",
+    "flags": {
+      "svg": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg",
+      "png": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_the_Taliban.svg/320px-Flag_of_the_Taliban.svg.png"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Israel",
+    "population": 10,
+    "region": "Europe",
+    "capital": "Paris",
+    "flags": {
+      "svg": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg",
+      "png": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_the_Taliban.svg/320px-Flag_of_the_Taliban.svg.png"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Indonésie",
+    "population": 10,
+    "region": "Europe",
+    "capital": "Paris",
+    "svg": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg",
+    "flags": {
+      "svg": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg",
+      "png": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_the_Taliban.svg/320px-Flag_of_the_Taliban.svg.png"
+    }
+  }
+]
