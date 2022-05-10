@@ -13,6 +13,8 @@ function App() {
     nightMode ? setNightMode(false) : setNightMode(true);
   };
 
+  const unicode = "&#127769;";
+
   return (
     <Router>
       <div
@@ -47,6 +49,7 @@ function App() {
                       style={{ color: nightMode ? "white" : "black" }}
                       className="btn-flat"
                     >
+                      {nightMode ? <span style={{ fontSize: "1.5em" }}>&#127765;</span> : <span style={{ fontSize: "1.5em" }}>&#127761;</span>}
                       Dark mode
                     </a>
                   </ul>
