@@ -11,7 +11,6 @@ function App() {
 
   const changeMode = () => {
     nightMode ? setNightMode(false) : setNightMode(true);
-    document.documentElement.setAttribute("data-theme", "black");
   };
 
   return (
