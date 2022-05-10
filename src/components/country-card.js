@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function CountryCard(props) {
   return (
-    <div className="col s3">
+    <div className="col s12 m6 l4 xl3">
       <div
         className="card"
         style={{
