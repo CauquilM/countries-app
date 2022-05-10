@@ -2,7 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./country-details.css";
 
-function CountryDetails() {
+function CountryDetails(props) {
   const { name } = useParams();
   const [country, setCountry] = useState([]);
   const navigate = useNavigate();
@@ -18,8 +18,12 @@ function CountryDetails() {
   }, [name]);
 
   return (
-    <div>
-      <div className="container">
+    <div className="country">
+      <div className="container"  style={{
+          backgroundColor: props.nightMode ? "#212e37" : "white",
+          color: props.nightMode ? "white" : "black",
+          marginTop: "20px"
+        }}>
         <div className="row section">
           <div className="col s10 offset-s2">
             <button
@@ -44,7 +48,7 @@ function CountryDetails() {
                       <span>Native Name:</span> {c.nativeName}
                     </p>
                     <p>
-                      <span>Population:</span> {c.population}
+                      <span>Population:</span> {c.population.toLocaleString()}
                     </p>
                     <p>
                       <span>Region:</span> {c.region}

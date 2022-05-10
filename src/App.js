@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
 import "./App.css";
 import CountriesList from "./pages/countries-list";
@@ -5,23 +6,51 @@ import CountryDetails from "./pages/country-details";
 import ErrorPage from "./pages/error-page";
 
 function App() {
+  const [nightMode, setNightMode] = useState(false);
+
+  const changeMode = () => {
+    nightMode ? setNightMode(false) : setNightMode(true);
+    document.documentElement.setAttribute("data-theme", "black")
+  };
+
   return (
     <Router>
-      <div>
+      <div
+        className="app" 
+        style={{ backgroundColor: nightMode ? "#212e37" : "white" }}
+      >
         <nav>
-          <div className="nav-wrapper red">
+          <div
+            className="nav-wrapper"
+            style={{
+              backgroundColor: nightMode ? "#212e37" : "white",
+              color: nightMode ? "white" : "black",
+            }}
+          >
             <div className="container">
               <Link
                 id="test"
-                className="black-text flow-text"
+                className="flow-text"
                 to="/"
-                style={{ color: "white" }}
+                style={{ color: nightMode ? "white" : "black" }}
               >
-                Where in the world ?
+                Where in the world?
               </Link>
-              <ul id="nav-mobile" className="right hide-on-med-and-down">
+              <ul
+                id="nav-mobile"
+                className="right hide-on-med-and-down flow-text"
+              >
                 <li>
-                  <ul>Dark mode</ul>
+                  <ul>
+                    <a
+                      style={{ color: nightMode ? "white" : "black" }}
+                      className="btn-flat"
+                      href="#"
+                      onClick={changeMode}
+                    >
+                      Dark mode
+                    </a>
+                  </ul>
                 </li>
               </ul>
             </div>
@@ -30,9 +59,12 @@ function App() {
         <Routes>
           <Route path="*" element={<ErrorPage />} />
 
-          <Route path="/" element={<CountriesList />} />
+          <Route path="/" element={<CountriesList nightMode={nightMode} />} />
           <Route path="/countries" element={<CountriesList />} />
-          <Route path="/countries/:name" element={<CountryDetails />} />
+          <Route
+            path="/countries/:name"
+            element={<CountryDetails nightMode={nightMode} />}
+          />
         </Routes>
       </div>
     </Router>

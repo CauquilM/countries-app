@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import CountryCard from "../components/country-card";
 
-function CountriesList() {
+function CountriesList(props) {
   const [countries, setCountries] = useState([]);
 
   useEffect(() => {
@@ -17,11 +17,8 @@ function CountriesList() {
   return (
     <div className="container">
       <div className="row">
-        <div>
-          
-        </div>
         {countries.map((country, index) => (
-          <CountryCard key={index} country={country}/>
+          <CountryCard key={index} country={country} nightMode={props.nightMode}/>
         ))}
       </div>
     </div>
