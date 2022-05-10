@@ -9,11 +9,7 @@ function CountryCard(props) {
           <img height="200px" src={props.country.flags.svg} alt="" />
         </div>
         <div className="card-content truncate">
-          <p className="card-title">
-            {props.country.name.length > 15
-              ? `${props.country.name}`
-              : `${props.country.nativeName}`}
-          </p>
+          <p className="card-title">{props.country.name}</p>
           <p>Population: {props.country.population}</p>
           <p>Region: {props.country.region}</p>
           <p>Capital: {props.country.capital}</p>

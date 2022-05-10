@@ -20,8 +20,8 @@ function CountriesList() {
         <div>
           
         </div>
-        {countries.map((country) => (
-          <CountryCard key={country.id} country={country}/>
+        {countries.map((country, index) => (
+          <CountryCard key={index} country={country}/>
         ))}
       </div>
     </div>
