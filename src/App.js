@@ -38,7 +38,7 @@ function App() {
               </Link>
               <ul
                 id="nav-mobile"
-                className="right hide-on-med-and-down flow-text"
+                className="right flow-text"
               >
                 <li>
                   <ul>
@@ -60,6 +60,7 @@ function App() {
             </div>
           </div>
         </nav>
+
         <Routes>
           <Route path="*" element={<ErrorPage />} />
 
