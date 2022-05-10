@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from "react";
 import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
 import "./App.css";
@@ -10,13 +11,13 @@ function App() {
 
   const changeMode = () => {
     nightMode ? setNightMode(false) : setNightMode(true);
-    document.documentElement.setAttribute("data-theme", "black")
+    document.documentElement.setAttribute("data-theme", "black");
   };
 
   return (
     <Router>
       <div
-        className="app" 
+        className="app"
         style={{ backgroundColor: nightMode ? "#212e37" : "white" }}
       >
         <nav>
@@ -43,10 +44,9 @@ function App() {
                 <li>
                   <ul>
                     <a
+                      onClick={changeMode}
                       style={{ color: nightMode ? "white" : "black" }}
                       className="btn-flat"
-                      href="#"
-                      onClick={changeMode}
                     >
                       Dark mode
                     </a>

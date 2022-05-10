@@ -1,3 +1,9 @@
-.country{
-    height: 100vh;
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+
+.country {
+  height: 100vh;
+}
+
+a {
+  font-family: "Manrope", sans-serif;
 }
