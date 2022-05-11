@@ -23,7 +23,7 @@ function App() {
           <div
             className="nav-wrapper"
             style={{
-              backgroundColor: nightMode ? "#212e37" : "white",
+              backgroundColor: nightMode ? "#2b3743" : "white",
               color: nightMode ? "white" : "black",
             }}
           >

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-function SearchCountry() {
+function SearchCountry(props) {
   const [country, setCountry] = useState("");
 
   return (

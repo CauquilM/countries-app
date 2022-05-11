@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-// import "./country-card.css"
 
 function CountryCard(props) {
   return (
@@ -7,7 +6,7 @@ function CountryCard(props) {
       <div
         className="card"
         style={{
-          backgroundColor: props.nightMode ? "#212e37" : "white",
+          backgroundColor: props.nightMode ? "#2b3743" : "white",
           color: props.nightMode ? "white" : "black",
         }}
       >
@@ -23,7 +22,7 @@ function CountryCard(props) {
         <div
           className="card-action"
           style={{
-            backgroundColor: props.nightMode ? "#212e37" : "white",
+            backgroundColor: props.nightMode ? "#2b3743" : "white",
             color: props.nightMode ? "white" : "black",
           }}
         >

@@ -30,14 +30,22 @@ function CountryDetails(props) {
         <div className="row section">
           <div className="col s10 offset-s2">
             <button
-              className="waves-effect waves-light btn color white black-text"
+              className={`waves-effect waves-light btn ${
+                props.nightMode ? "white-text" : "color white black-text"
+              }`}
+              style={{
+                backgroundColor: props.nightMode ? "#2b3743" : "",
+              }}
               onClick={() => navigate("/")}
             >
-              Back
+              <div className="valign-wrapper">
+              <span className="material-symbols-outlined col s5">arrow_back</span>
+              <span className="col s7">Back</span>
+              </div>
             </button>
           </div>
         </div>
-        <div className="row valign-wrapper">
+        <div className="row">
           {country.map((c, index) => (
             <div key={index}>
               <div className="col s12 m4 offset-m2">

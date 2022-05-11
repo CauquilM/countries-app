@@ -5,7 +5,7 @@ import SelectRegion from "../components/select-region";
 
 function CountriesList(props) {
   const [countries, setCountries] = useState([]);
-  const [setSelectedRegion] = useState();
+  const [selectedRegion, setSelectedRegion] = useState();
   const [filteredCountries, setFilteredCountries] = useState(null);
 
   const selectRegion = (region) => {
@@ -40,8 +40,8 @@ function CountriesList(props) {
       <div
         className={window.innerWidth > 600 ? "row valign-wrapper" : "container"}
       >
-        <SearchCountry />
-        <SelectRegion onMoveData={selectRegion} />
+        <SearchCountry nightMode={props.nightMode}/>
+        <SelectRegion onMoveData={selectRegion} nightMode={props.nightMode}/>
       </div>
       <div className="row">
         {!filteredCountries
