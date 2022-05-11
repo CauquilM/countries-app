@@ -1,17 +1,28 @@
 import { useState, useEffect } from "react";
 import CountryCard from "../components/country-card";
+import SearchCountry from "../components/search-country";
+import SelectRegion from "../components/select-region";
 
 function CountriesList(props) {
   const [countries, setCountries] = useState([]);
-
+  const [setSelectedRegion] = useState();
   const [filteredCountries, setFilteredCountries] = useState(null);
 
-  const filterFunction = (regiont) => {
-    let filter = countries.filter(
-      (countries) => countries.region === regiont
-    );
-    setFilteredCountries(filter);
-    console.log(filteredCountries);
+  const selectRegion = (region) => {
+    setSelectedRegion(region);
+    filterFunction(region);
+  };
+
+  const filterFunction = (selectedRegion) => {
+    if (selectedRegion !== "World") {
+      let filter = countries.filter(
+        (countries) => countries.region === selectedRegion
+      );
+      setFilteredCountries(filter);
+      console.log(filteredCountries);
+    } else {
+      setFilteredCountries(null);
+    }
   };
 
   useEffect(() => {
@@ -25,23 +36,29 @@ function CountriesList(props) {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container" style={{ marginTop: "20px" }}>
+      <div
+        className={window.innerWidth > 600 ? "row valign-wrapper" : "container"}
+      >
+        <SearchCountry />
+        <SelectRegion onMoveData={selectRegion} />
+      </div>
       <div className="row">
-        <button onClick={() => filterFunction("Asia")}>Asia</button>
-        <button onClick={() => filterFunction("Americas")}>Americas</button>
-        {!filteredCountries ? countries.map((country, index) => (
-          <CountryCard
-            key={index}
-            country={country}
-            nightMode={props.nightMode}
-          />
-        )) : filteredCountries.map((country, index) => (
-          <CountryCard
-            key={index}
-            country={country}
-            nightMode={props.nightMode}
-          />
-        ))}
+        {!filteredCountries
+          ? countries.map((country, index) => (
+              <CountryCard
+                key={index}
+                country={country}
+                nightMode={props.nightMode}
+              />
+            ))
+          : filteredCountries.map((country, index) => (
+              <CountryCard
+                key={index}
+                country={country}
+                nightMode={props.nightMode}
+              />
+            ))}
       </div>
     </div>
   );
