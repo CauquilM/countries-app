@@ -15,3 +15,8 @@ code {
 html, body, #app, #app>div {
   height: 100%
 }
+
+body>.country{
+  background-color: red;
+} 
+
