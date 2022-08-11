@@ -1,11 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
 import "./App.css";
 import CountriesList from "./pages/countries-list";
 import CountryDetails from "./pages/country-details";
 import ErrorPage from "./pages/error-page";
+import { setCountriesData } from "./redux/feature/countriesData.slice";
 import { setNightMode } from "./redux/feature/nightMode.slice";
 
 function App() {
@@ -16,6 +17,15 @@ function App() {
   const changeMode = () => {
     nightMode ? setNightMode(false) : setNightMode(true);
   };
+
+  useEffect(() => {
+    fetch("https://restcountries.com/v2/all")
+      .then((res) => res.json())
+      .then((result) => {
+        dispatch(setCountriesData(result));
+        // console.log(result);
+      });
+  }, []);
 
   return (
     <Router>
