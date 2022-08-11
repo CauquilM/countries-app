@@ -3,7 +3,7 @@ import CountryCard from "../components/country-card";
 import SearchCountry from "../components/search-country";
 import SelectRegion from "../components/select-region";
 
-function CountriesList(props) {
+function CountriesList() {
   const [countries, setCountries] = useState([]);
   const [selectedRegion, setSelectedRegion] = useState();
   const [filteredCountries, setFilteredCountries] = useState(null);
@@ -40,8 +40,8 @@ function CountriesList(props) {
       <div
         className={window.innerWidth > 600 ? "row valign-wrapper" : "container"}
       >
-        <SearchCountry nightMode={props.nightMode}/>
-        <SelectRegion onMoveData={selectRegion} nightMode={props.nightMode}/>
+        <SearchCountry/>
+        <SelectRegion onMoveData={selectRegion}/>
       </div>
       <div className="row">
         {!filteredCountries
@@ -49,14 +49,12 @@ function CountriesList(props) {
               <CountryCard
                 key={index}
                 country={country}
-                nightMode={props.nightMode}
               />
             ))
           : filteredCountries.map((country, index) => (
               <CountryCard
                 key={index}
                 country={country}
-                nightMode={props.nightMode}
               />
             ))}
       </div>

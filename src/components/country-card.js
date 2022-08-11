@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function CountryCard(props) {
+  const nightMode = useSelector((state) => state.nightMode.nightMode);
   return (
     <div className="col s12 m6 l4 xl3">
       <div
         className="card"
         style={{
-          backgroundColor: props.nightMode ? "#2b3743" : "white",
-          color: props.nightMode ? "white" : "black",
+          backgroundColor: nightMode ? "#2b3743" : "white",
+          color: nightMode ? "white" : "black",
         }}
       >
         <div className="card-image">
@@ -22,8 +24,8 @@ function CountryCard(props) {
         <div
           className="card-action"
           style={{
-            backgroundColor: props.nightMode ? "#2b3743" : "white",
-            color: props.nightMode ? "white" : "black",
+            backgroundColor: nightMode ? "#2b3743" : "white",
+            color: nightMode ? "white" : "black",
           }}
         >
           <Link to={`/countries/${props.country.name}`}>Details</Link>

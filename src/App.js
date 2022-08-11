@@ -65,12 +65,9 @@ function App() {
         <Routes>
           <Route path="*" element={<ErrorPage />} />
 
-          <Route path="/" element={<CountriesList nightMode={nightMode} />} />
+          <Route path="/" element={<CountriesList />} />
           <Route path="/countries" element={<CountriesList />} />
-          <Route
-            path="/countries/:name"
-            element={<CountryDetails nightMode={nightMode} />}
-          />
+          <Route path="/countries/:name" element={<CountryDetails />} />
         </Routes>
       </div>
     </Router>

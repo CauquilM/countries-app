@@ -1,11 +1,13 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./country-details.css";
+import { useSelector } from "react-redux";
 
-function CountryDetails(props) {
+function CountryDetails() {
   const { name } = useParams();
   const [country, setCountry] = useState([]);
   const navigate = useNavigate();
+  const nightMode = useSelector((state) => state.nightMode.nightMode);
 
   useEffect(() => {
     fetch(`https://restcountries.com/v2/name/${name}`)
@@ -22,8 +24,8 @@ function CountryDetails(props) {
       <div
         className="container"
         style={{
-          backgroundColor: props.nightMode ? "#212e37" : "white",
-          color: props.nightMode ? "white" : "black",
+          backgroundColor: nightMode ? "#212e37" : "white",
+          color: nightMode ? "white" : "black",
           marginTop: "20px",
         }}
       >
@@ -31,16 +33,18 @@ function CountryDetails(props) {
           <div className="col s10 offset-s2">
             <button
               className={`waves-effect waves-light btn ${
-                props.nightMode ? "white-text" : "color white black-text"
+                nightMode ? "white-text" : "color white black-text"
               }`}
               style={{
-                backgroundColor: props.nightMode ? "#2b3743" : "",
+                backgroundColor: nightMode ? "#2b3743" : "",
               }}
               onClick={() => navigate("/")}
             >
               <div className="valign-wrapper">
-              <span className="material-symbols-outlined col s5">arrow_back</span>
-              <span className="col s7">Back</span>
+                <span className="material-symbols-outlined col s5">
+                  arrow_back
+                </span>
+                <span className="col s7">Back</span>
               </div>
             </button>
           </div>
